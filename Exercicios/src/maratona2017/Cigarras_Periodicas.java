@@ -36,6 +36,7 @@ public class Cigarras_Periodicas {
         MMC multiplo = new MMC();
         int N = entrada.nextInt();
         int L = entrada.nextInt();
+        int limite=100;
         int mmc1 =0;
         int mmc2 =0;
         int cont= 1;
@@ -61,19 +62,20 @@ public class Cigarras_Periodicas {
         if(mmc1==L){
             pextra=1;
         }else{
-            while(mmc2<L){
+            while(mmc2<L||limite>0){
                 mmc2=multiplo.mmc(mmc1,cont);
                 if(mmc2>maior&&mmc2<L){
                     maior=mmc2;
                     pextra=cont;
                 }
+                limite--;
                 cont++;
             }
         }
         
-        for (int i = 72; i < 100; i++) {
-            System.out.println(multiplo.mmc(42, i));
-        }
+        
+            System.out.println(pextra);
+       
         
         
     }
